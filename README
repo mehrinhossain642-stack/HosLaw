@@ -30,7 +30,67 @@ HosLaw/
 │   └── ...
 └── README.md
 
-## ⚙️ Setup
+##  Setup
+
+##  Future Improvements / Roadmap
+
+This project is actively being developed. Planned enhancements include:
+
+###  Conversation Memory
+- Persist user chat history using:
+  - Local storage (short-term)
+  - Database integration (MongoDB / Supabase)
+- Enable context-aware responses across multiple messages
+- Allow users to revisit previous legal queries
+
+---
+
+### Stop / Refresh Controls
+- Add ability to:
+  - Stop AI response mid-generation
+  - Regenerate (refresh) responses
+- Improve user control and interaction experience
+- Introduce streaming responses for real-time output
+
+---
+
+###  CanLII API Integration
+- Integrate the CanLII API for:
+  - Real Canadian case law references
+  - Legal document metadata
+- Enhance responses with:
+  - Case citations
+  - Relevant precedents
+  - Source-backed legal information
+
+---
+
+###  Backend & Deployment Improvements
+- Improve API reliability and error handling
+- Add rate limiting and request validation
+- Optimize performance for production usage
+
+---
+
+###  Feature Enhancements
+- Generate legal documents (e.g., dispute letters)
+- Step-by-step legal guidance workflows
+- Province-specific legal insights
+- Improved prompt engineering for higher accuracy
+
+---
+
+###  Authentication & User Accounts
+- Add user login/signup (Firebase / Auth0)
+- Save user-specific chat history
+- Personalized legal assistance experience
+
+---
+
+###  UI/UX Improvements
+- Better loading states and feedback indicators
+- Chat response formatting (bullet points, sections)
+- Mobile responsiveness optimization
 
 ### Backend
 ```bash
