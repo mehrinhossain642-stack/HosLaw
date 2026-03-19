@@ -1,0 +1,39 @@
+# HosLaw  Ontario Legal AI Assistant
+
+HosLaw is an AI powered legal assistant that answers questions about Ontario law using natural language processing and large language models.
+
+## Features
+- Ask legal questions 
+- FastAPI backend with REST endpoints
+- Groq-powered LLM responses
+- Clean Next.js frontend
+- Designed for integration with CanLII API (in progress)
+
+## 🧠 Tech Stack
+- Python (FastAPI)
+- Next.js (React)
+- Groq API (LLM)
+- REST API architecture
+
+## 📁 Project Structure
+
+HosLaw/
+├── backend/
+│   ├── main.py
+│   ├── rag.py
+│   ├── requirements.txt
+│   └── .env.example
+├── frontend/
+│   ├── app/
+│   ├── public/
+│   ├── package.json
+│   └── ...
+└── README.md
+
+## ⚙️ Setup
+
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
