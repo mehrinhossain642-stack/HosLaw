@@ -50,14 +50,15 @@ def get_canlii_metadata(province: str, question: str) -> str:
 
     try:
         print("Calling CanLII API...")
+        print("URL:", url)
 
         response = requests.get(url, headers=headers, timeout=15)
 
         print("Status code:", response.status_code)
+        print("Response text:", response.text[:500])
 
         response.raise_for_status()
         data = response.json()
-
         return str(data)[:1000]
 
     except requests.RequestException as e:
