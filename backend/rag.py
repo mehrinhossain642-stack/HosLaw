@@ -39,36 +39,30 @@ def normalize_province(province: str) -> str:
     return PROVINCE_COLLECTION_MAP.get(province.strip().lower(), "ca")
 
 def get_canlii_metadata(province: str, question: str) -> str:
-    """
-    Fetches CanLII metadata.
-    This is a starter function. Since CanLII API access is metadata-limited,
-    we use it to gather collection-level context instead of full legal text.
-    """
     jurisdiction = normalize_province(province)
 
-    # Starter endpoint pattern — adjust this to the exact CanLII endpoint
-    # you are using from their API docs.
-    url = f"https://api.canlii.org/v1/caseBrowse/en/{jurisdiction}"
+    url = f"https://api.canlii.org/v1/caseBrowse/en/{jurisdiction}/"
 
     headers = {
-        "Authorization": f"Bearer {CANLII_API_KEY}",
+        "X-API-Key": CANLII_API_KEY,
         "Accept": "application/json",
     }
 
     try:
+        print("Calling CanLII API...")
+
         response = requests.get(url, headers=headers, timeout=15)
+
+        print("Status code:", response.status_code)
+
         response.raise_for_status()
         data = response.json()
 
-        # Keep the metadata lightweight for now
-        # Adjust these fields based on actual response structure
-        if isinstance(data, dict):
-            return str(data)[:2000]
-
-        return "CanLII metadata retrieved, but response format was unexpected."
+        return str(data)[:1000]
 
     except requests.RequestException as e:
-        return f"Could not retrieve CanLII metadata: {str(e)}"
+        print("CanLII ERROR:", str(e))
+        return f"CanLII error: {str(e)}"
 
 def answer_question(question: str, province: str) -> str:
     canlii_context = get_canlii_metadata(province, question)
