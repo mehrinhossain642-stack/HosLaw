@@ -9,13 +9,13 @@ HosLaw is an AI powered legal assistant that answers questions about Ontario law
 - Clean Next.js frontend
 - Designed for integration with CanLII API (in progress)
 
-## 🧠 Tech Stack
+##  Tech Stack
 - Python (FastAPI)
 - Next.js (React)
 - Groq API (LLM)
 - REST API architecture
 
-## 📁 Project Structure
+##  Project Structure
 
 HosLaw/
 ├── backend/
